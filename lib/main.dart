@@ -1,8 +1,8 @@
-import 'package:e_commerce_app/screens/splash_screen.dart';
+import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'E_Commerce Shopping',
       theme: ThemeData(
-      primaryColor: Color(0xFFEF6969),
+      primaryColor: const Color(0xFFEF6969),
       ),
-      home: SplashScreen(),
+      home: const LoginScreen(),
     );
   }
 }
