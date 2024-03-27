@@ -51,8 +51,14 @@ final introKey = GlobalKey<IntroductionScreenState> ();
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),
               backgroundColor: const Color(0xFFEF6969),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8)
+              ),
+              
              ),
-             child: const Text("Let's Shop", style: TextStyle(fontSize: 20, color: Colors.white),),
+             child: const Text("Let's Shop", 
+             style: TextStyle(fontSize: 20, color: Colors.white),
+             )
              ),
           ),
           )
