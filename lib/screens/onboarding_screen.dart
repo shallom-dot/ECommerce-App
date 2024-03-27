@@ -50,7 +50,7 @@ final introKey = GlobalKey<IntroductionScreenState> ();
             },
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),
-              backgroundColor: const Color(0xFFEF6969),
+              backgroundColor: const Color(0xFFDB3022),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8)
               ),
@@ -71,11 +71,11 @@ final introKey = GlobalKey<IntroductionScreenState> ();
       showBackButton: true,
       back: const Text('Back', style: TextStyle(
         fontWeight: FontWeight.w600,
-        color: Color(0XFFEF6969),  
+        color: Color(0xFFDB3022),  
       ),),
           next: const Text('Next',
            style: TextStyle(fontWeight: FontWeight.w600,
-            color: Color(0XFFEF6969),
+            color: Color(0xFFDB3022),
             ),),
         //  done: const Text('Done',
         //    style: TextStyle(fontWeight: FontWeight.w600,
@@ -90,7 +90,7 @@ final introKey = GlobalKey<IntroductionScreenState> ();
             dotsDecorator: DotsDecorator(
               size: const Size.square(10),
               activeSize: const Size(20, 10),
-              activeColor: const Color(0XFFEF6969),
+              activeColor: const Color(0xFFDB3022),
               color: Colors.black,
               spacing: const EdgeInsets.symmetric(horizontal: 3),
               activeShape: RoundedRectangleBorder(

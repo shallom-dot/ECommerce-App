@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
            Icon(
             Icons.shopping_cart,
             size: 200,
-            color: Color.fromARGB(255, 238, 80, 80),
+            color: Color(0xFFDB3022),
           ),
           Text('DP SHOP',
           style: TextStyle(

@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
                       decoration: const InputDecoration(
                         labelText: 'Enter Email',
                         border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.person),
+                        prefixIcon: Icon(Icons.email),
                       ),
                     ),
                     const SizedBox(height: 15,),
@@ -41,7 +41,7 @@ class LoginScreen extends StatelessWidget {
                       child: TextButton(onPressed: () {},
                 child: const Text('Forgot Password?',
                  style: TextStyle(
-                  color: Color(0xFFEF6969),
+                  color: Color(0xFFDB3022),
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
                  )),),
@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
             },
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),
-              backgroundColor: const Color(0xFFEF6969),
+              backgroundColor: const Color(0xFFDB3022),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8)
               )
@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                },
                 child: const Text('Sign Up',
                  style: TextStyle(
-                  color: Color(0xFFEF6969),
+                  color: Color(0xFFDB3022),
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
                  )),
