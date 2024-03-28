@@ -9,10 +9,6 @@ class RecoveryScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<RecoveryScreen> {
- 
-  bool clrButton = false;
-
-  TextEditingController  emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,33 +31,36 @@ class _ForgotPasswordScreenState extends State<RecoveryScreen> {
                 fontWeight: FontWeight.bold,
               ),),
               const SizedBox(height: 60),
-               const Text('Please enter your email addresss. You will receive a link to create or set a new password via email' ,
-              style: TextStyle(
-                fontSize: 15,
-              ),),
-              const SizedBox(height: 15,),
               TextFormField(
-                 controller : emailController,
-                onChanged: (value) {
-                  if (value != "") {
-                    setState(() {
-                      clrButton = true;
-                    });
-                  }
-                },
-                 decoration: InputDecoration(
-                          labelText: 'Email',
+                 decoration: const InputDecoration(
+                          labelText: 'Reset Code',
                           border:  OutlineInputBorder(),
-                          suffix: InkWell(
-                            onTap: () {
-                              setState(() {
-                             emailController.clear();                              });
-                            },
-                            child: const Icon(Icons.cancel,
-                            color: Color(0xFFDB3022),))
+                            prefixIcon: Icon(Icons.numbers),
                         ),
                       ),
-                  const SizedBox(height: 50,),
+
+  const SizedBox(height: 20,),
+              TextFormField(
+                 decoration: const InputDecoration(
+                          labelText: 'New Paaword',
+                          border:  OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.lock),
+                        suffixIcon: Icon(Icons.remove_red_eye),
+                        ),
+                      ),
+
+                        const SizedBox(height: 20,),
+              TextFormField(
+                 decoration: const InputDecoration(
+                          labelText: 'Confirm new password',
+                          border:  OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.lock),
+                        suffixIcon: Icon(Icons.remove_red_eye),
+                          
+                  )
+                        ),
+             const SizedBox(height: 20,),
+
                        ElevatedButton(onPressed: () {
             // Navigator.push(context, MaterialPageRoute(builder: (context) => const RecoveryScreen()));
             },
@@ -73,12 +72,11 @@ class _ForgotPasswordScreenState extends State<RecoveryScreen> {
               )
               
              ),
-             child: const Text("Send Code",
+             child: const Text("Reset Password",
               style: TextStyle(fontSize: 18, color: Colors.white),),
              ),
-
-            ],
-          ),
+            
+         ] ),
         ),
       ),
     );
