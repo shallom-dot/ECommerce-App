@@ -24,22 +24,24 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding:  EdgeInsets.symmetric(horizontal: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+           // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 10),
-              const Text('Forgot Password' ,
+          const SizedBox(height: 10),
+              Align(
+              alignment: Alignment.topLeft,
+             child: Text('Forgot Password' ,
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
-              ),),
-              const SizedBox(height: 60),
+              ),),),
+               SizedBox(height: 60),
                const Text('Please enter your email addresss. You will receive a link to create or set a new password via email' ,
               style: TextStyle(
                 fontSize: 15,
               ),),
-              const SizedBox(height: 15,),
+            const SizedBox(height: 15,),
               TextFormField(
                  controller : emailController,
                 onChanged: (value) {
@@ -77,6 +79,29 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               style: TextStyle(fontSize: 18, color: Colors.white),),
              ),
 
+
+                Column(
+                  children: [
+                    
+              const SizedBox(height: 20,),
+                    const Text("OR",
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 15,
+                    )
+                    ),
+                    TextButton(onPressed: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+               },
+                child: const Text('Verify Using Number',
+                 style: TextStyle(
+                  color: Color(0xFFDB3022),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+                 )),
+                  ],
+                ),
+               
             ],
           ),
         ),
