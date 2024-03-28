@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/forgot_password_screen.dart';
 import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 110,),
+              const SizedBox(height: 110,),
               Image.asset('assets/images/freed.png'),
               const SizedBox(height: 50,),
               Padding(
@@ -38,7 +39,9 @@ class LoginScreen extends StatelessWidget {
                       ),                  
                     ),
                      Align(alignment: Alignment.bottomRight,
-                      child: TextButton(onPressed: () {},
+                      child: TextButton(onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotPasswordScreen()));
+                      },
                 child: const Text('Forgot Password?',
                  style: TextStyle(
                   color: Color(0xFFDB3022),
@@ -72,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                 )
                 ),
                TextButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
                },
                 child: const Text('Sign Up',
                  style: TextStyle(
