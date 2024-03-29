@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/otp_screen.dart';
 import 'package:e_commerce_app/screens/recovery_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,19 +25,19 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 15),
+          padding:  const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
           const SizedBox(height: 10),
-              Align(
+              const Align(
               alignment: Alignment.topLeft,
              child: Text('Forgot Password' ,
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),),),
-               SizedBox(height: 60),
+               const SizedBox(height: 60),
                const Text('Please enter your email addresss. You will receive a link to create or set a new password via email' ,
               style: TextStyle(
                 fontSize: 15,
@@ -53,7 +54,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 },
                  decoration: InputDecoration(
                           labelText: 'Email',
-                          border:  OutlineInputBorder(),
+                          border:  const OutlineInputBorder(),
                           suffix: InkWell(
                             onTap: () {
                               setState(() {
@@ -91,7 +92,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     )
                     ),
                     TextButton(onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => const OTPScreen()));
                },
                 child: const Text('Verify Using Number',
                  style: TextStyle(

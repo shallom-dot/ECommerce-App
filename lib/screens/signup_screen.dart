@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/login_screen.dart';
-import 'package:e_commerce_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -14,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 50,),
+              const SizedBox(height: 50,),
               Image.asset('assets/images/freed.png'),
               const SizedBox(height: 20,),
               Padding(
@@ -28,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
                         prefixIcon: Icon(Icons.person),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Enter Email',
@@ -36,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
                         prefixIcon: Icon(Icons.email),
                       ),
                     ),
-                     SizedBox(height: 15),
+                     const SizedBox(height: 15),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Enter Number',
@@ -93,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                TextButton(onPressed: () {
                 Navigator.push(context, 
-                MaterialPageRoute(builder: (context) => LoginScreen()));
+                MaterialPageRoute(builder: (context) => const LoginScreen()));
                },
                 child: const Text('Log In',
                  style: TextStyle(
