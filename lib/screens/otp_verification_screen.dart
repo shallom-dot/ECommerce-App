@@ -18,7 +18,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     );
   }
 
-TextEditingController textEditingController = new TextEditingController(text: "");
+TextEditingController textEditingController = TextEditingController(text: "");
 
   // /// get signature code
   // _getSignatureCode() async {

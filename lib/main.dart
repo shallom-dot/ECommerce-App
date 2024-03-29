@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/screens/login_screen.dart';
+import 'package:e_commerce_app/screens/navigation_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,16 +8,15 @@ void main() {
 class MyApp extends StatelessWidget {
    const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'E_Commerce Shopping',
       theme: ThemeData(
-      primaryColor: const Color(0xFFEF6969),
+      primaryColor: const Color(0xFFDB3022),
       ),
-      home: const LoginScreen(),
+      home: const NavigationScreen(),
     );
   }
 }
