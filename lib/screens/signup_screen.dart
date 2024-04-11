@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/login_screen.dart';
+import 'package:e_commerce_app/screens/navigation_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -66,7 +66,7 @@ class SignUpScreen extends StatelessWidget {
                      
                     const SizedBox(height: 40),
                      ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const NavigationScreen()));
             },
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),

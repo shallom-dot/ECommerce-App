@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/cart_screen.dart';
 import 'package:e_commerce_app/widgets/container_modal_button.dart';
 import 'package:flutter/material.dart';
 
@@ -120,11 +121,13 @@ Colors.amber
 
                   const SizedBox(height: 20,),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) =>  CartScreen()));
+                    },
                     child: ContainerButtonModel(
                       containerWidth: MediaQuery.of(context).size.width,
                       itext: 'Checkout',
-                      bgColor: Color(0xFFDB3022),
+                      bgColor: const Color(0xFFDB3022),
                     ),
                   )
 
