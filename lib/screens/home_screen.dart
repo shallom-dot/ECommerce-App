@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
 
   const SizedBox(height: 20,),
-  Container(
+  SizedBox(
     height: 200,
     child: ListView.builder(
       itemCount: imageList.length,
@@ -272,7 +272,7 @@ Center(
       // crossAxisSpacing: 40
       ), 
       itemBuilder: (context, index) {
-        return Container(
+        return SizedBox(
           width: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -330,6 +330,7 @@ Center(
                           color: Colors.amber,
                           size: 22,),
                            Text(  // ignore: prefer_interpolation_to_compose_strings
+                       // ignore: prefer_interpolation_to_compose_strings
                        '${'(' + review[index]})',
                       ),
                       const SizedBox(width: 10,),

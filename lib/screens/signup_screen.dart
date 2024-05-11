@@ -1,10 +1,35 @@
 import 'package:e_commerce_app/screens/login_screen.dart';
-import 'package:e_commerce_app/screens/navigation_screen.dart';
+import 'package:e_commerce_app/services/firebase_auth_methods.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+void signUpUser() async {
+  FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
+    email: emailController.text,
+     password: passwordController.text, 
+     context: context);
+}
+
+  
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -29,6 +54,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     TextFormField(
+                      controller: emailController,
                       decoration: const InputDecoration(
                         labelText: 'Enter Email',
                         border: OutlineInputBorder(),
@@ -45,6 +71,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 15,),
                     TextFormField(
+                      controller: passwordController,
                       obscureText: true,
                       decoration: const InputDecoration(
                         labelText: 'Enter Password',
@@ -55,6 +82,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                      const SizedBox(height: 15,),
                     TextFormField(
+                      controller: passwordController,
                       obscureText: true,
                       decoration: const InputDecoration(
                         labelText: 'Confirm Password',
@@ -65,9 +93,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                      
                     const SizedBox(height: 40),
-                     ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const NavigationScreen()));
-            },
+                     ElevatedButton(onPressed: signUpUser,
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),
               backgroundColor: const Color(0xFFDB3022),

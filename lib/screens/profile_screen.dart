@@ -13,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.w500
         ),),
-        leading: BackButton(),
+        leading: const BackButton(),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -65,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
                     ]
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                ProfileButton(mytext: 'My Account', 

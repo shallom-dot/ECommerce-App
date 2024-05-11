@@ -3,6 +3,7 @@ import 'package:e_commerce_app/widgets/container_modal_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CartScreen extends StatelessWidget {
 
  List imageList = [
@@ -44,89 +45,86 @@ class CartScreen extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           child: Column(
             children: [
-              Container(
-                // height: 300,
-                child: ListView.builder(
-                  itemCount: imageList.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(vertical: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Checkbox(
-                            splashRadius: 20,
-                            activeColor: const Color(0xFFDB3022),
-                            value: true,
-                            onChanged: (val) {},
+              ListView.builder(
+                itemCount: imageList.length,
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: const EdgeInsets.symmetric(vertical: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Checkbox(
+                          splashRadius: 20,
+                          activeColor: const Color(0xFFDB3022),
+                          value: true,
+                          onChanged: (val) {},
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            imageList[index],
+                            height: 80,
+                            width: 80,
+                            fit: BoxFit.cover,
                           ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              imageList[index],
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                productTitles[index],
-                                style: const TextStyle(
-                                  color: Colors.black87,
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: 18
-                                ),
-                              ),
-                              const SizedBox(height: 10,),
-                              const Text('Hooded Jacket',
-                              style: TextStyle(
-                                color: Colors.black26,
-                                fontSize: 16,
-                              ),),
-                              const SizedBox(height: 10,),
-                              Text(
-                                prices[index],
-                                style: const TextStyle(
-                                  color: Color(0xFFDB3022),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              )
-                            ],
-                          ),
-                          const Row(
-                            children: [
-                            Icon(CupertinoIcons.minus,
-                              color: Colors.green,
-                              ),
-                            
-                            SizedBox(width: 20,),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
                             Text(
-                              '1',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
+                              productTitles[index],
+                              style: const TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 18
                               ),
                             ),
-                            SizedBox(width: 5),
-                            Icon(CupertinoIcons.plus,
-                            color: Color(0xFFDB3022),),
-                            
-                            ],
-                          )
-                        ],
-                      ),
-                    );
-                  }
-                ),  
-                ),
+                            const SizedBox(height: 10,),
+                            const Text('Hooded Jacket',
+                            style: TextStyle(
+                              color: Colors.black26,
+                              fontSize: 16,
+                            ),),
+                            const SizedBox(height: 10,),
+                            Text(
+                              prices[index],
+                              style: const TextStyle(
+                                color: Color(0xFFDB3022),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            )
+                          ],
+                        ),
+                        const Row(
+                          children: [
+                          Icon(CupertinoIcons.minus,
+                            color: Colors.green,
+                            ),
+                          
+                          SizedBox(width: 20,),
+                          Text(
+                            '1',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Icon(CupertinoIcons.plus,
+                          color: Color(0xFFDB3022),),
+                          
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                }
+              ),
                 const SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,7 +174,7 @@ class CartScreen extends StatelessWidget {
                     bgColor: const Color(0xFFDB3022),
                   ),
                 ),
-                SizedBox(height: 40,),
+                const SizedBox(height: 40,),
             ],
           ),
         ) ,

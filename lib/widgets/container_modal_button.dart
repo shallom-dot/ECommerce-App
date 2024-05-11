@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ContainerButtonModel extends StatelessWidget {
-   ContainerButtonModel({super.key, this.bgColor, this.containerWidth, required this.itext});
+   const ContainerButtonModel({super.key, this.bgColor, this.containerWidth, required this.itext});
 
   final Color? bgColor;
   final double? containerWidth;

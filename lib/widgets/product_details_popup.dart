@@ -2,6 +2,7 @@ import 'package:e_commerce_app/screens/cart_screen.dart';
 import 'package:e_commerce_app/widgets/container_modal_button.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ProductDetailPopUp extends StatelessWidget {
 
 final iStyle =  const TextStyle(
@@ -74,21 +75,19 @@ Colors.amber
                             ],
                           ),
                           const SizedBox(height: 18),
-                          Container(
-                            child: Row(
-                              children: [
-                                for(var i = 0; i< 4; i++)
-                                Container(
-                                  margin: const EdgeInsets.symmetric(horizontal: 6),
-                                  height: 28,
-                                  width: 28,
-                                  decoration: BoxDecoration(
-                                    color: clrs[i],
-                                    borderRadius: BorderRadius.circular(20)
-                                  ),
-                                )
-                              ],
-                            ),
+                          Row(
+                            children: [
+                              for(var i = 0; i< 4; i++)
+                              Container(
+                                margin: const EdgeInsets.symmetric(horizontal: 6),
+                                height: 28,
+                                width: 28,
+                                decoration: BoxDecoration(
+                                  color: clrs[i],
+                                  borderRadius: BorderRadius.circular(20)
+                                ),
+                              )
+                            ],
                           ),
                           const SizedBox(height: 20,),
                           Row(

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "209076167956",
+    "project_id": "e-commerce-app-ffa8d",
+    "storage_bucket": "e-commerce-app-ffa8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209076167956:android:fe8fe395cdac39c31a4e01",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3o35zA9LPYj4UO1y4MKX87XSkAxLzZb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

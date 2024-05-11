@@ -1,4 +1,5 @@
 
+import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class RecoveryScreen extends StatefulWidget {
@@ -62,7 +63,7 @@ class _ForgotPasswordScreenState extends State<RecoveryScreen> {
              const SizedBox(height: 20,),
 
                        ElevatedButton(onPressed: () {
-            // Navigator.push(context, MaterialPageRoute(builder: (context) => const RecoveryScreen()));
+             Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
             },
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),

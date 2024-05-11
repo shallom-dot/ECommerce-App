@@ -1,11 +1,16 @@
 import 'package:e_commerce_app/screens/forgot_password_screen.dart';
-import 'package:e_commerce_app/screens/navigation_screen.dart';
 import 'package:e_commerce_app/screens/signup_screen.dart';
+import 'package:e_commerce_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -50,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                  )),),
                     const SizedBox(height: 40),
                      ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const NavigationScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SplashScreen()));
             },
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),
