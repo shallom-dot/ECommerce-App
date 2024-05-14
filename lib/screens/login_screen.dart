@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/screens/forgot_password_screen.dart';
 import 'package:e_commerce_app/screens/signup_screen.dart';
 import 'package:e_commerce_app/screens/splash_screen.dart';
+import 'package:e_commerce_app/services/firebase_auth_methods.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -11,6 +13,26 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+void loginUser() {
+  FirebaseAuthMethods(FirebaseAuth.instance).loginWithEmail(
+    email: emailController.text ,
+    password: passwordController.text,
+     context: context);
+
+}
+
+
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -54,9 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontWeight: FontWeight.w600),
                  )),),
                     const SizedBox(height: 40),
-                     ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const SplashScreen()));
-            },
+                     ElevatedButton(onPressed: loginUser,
              style:  ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(55),
               backgroundColor: const Color(0xFFDB3022),
@@ -68,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
              child: const Text("Log In",
               style: TextStyle(fontSize: 18, color: Colors.white),),
              ),
-
+        
              const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +109,31 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontWeight: FontWeight.w600),
                  )),
               ],
-            )
+            ),
+             const SizedBox(height: 10),
+                     ElevatedButton(onPressed:
+              () => FirebaseAuthMethods(FirebaseAuth.instance).SignInWithGoogle(context),
+             style:  ElevatedButton.styleFrom(
+             minimumSize: const Size.fromHeight(55),
+              backgroundColor: Color(0xFFDB3022),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                
+              )
+              
+             ),
+              child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(
+                  'assets/images/icons8-google-48.png'
+                ),
+               SizedBox(width: 20),
+                Text('Sign in with Google',
+                style: TextStyle(fontSize: 18, color: Colors.white),),
+              ],
+            ),
+             ),
                   ],
                 ),
               ),
