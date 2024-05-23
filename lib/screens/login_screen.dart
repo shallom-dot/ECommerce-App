@@ -4,6 +4,7 @@ import 'package:e_commerce_app/screens/splash_screen.dart';
 import 'package:e_commerce_app/services/firebase_auth_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in_android/google_sign_in_android.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -112,10 +113,10 @@ void loginUser() {
             ),
              const SizedBox(height: 10),
                      ElevatedButton(onPressed:
-              () => FirebaseAuthMethods(FirebaseAuth.instance).SignInWithGoogle(context),
+              () => FirebaseAuthMethods(FirebaseAuth.instance).signInWithGoogle(context),
              style:  ElevatedButton.styleFrom(
              minimumSize: const Size.fromHeight(55),
-              backgroundColor: Color(0xFFDB3022),
+              backgroundColor: const Color(0xFFDB3022),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
                 
@@ -126,11 +127,13 @@ void loginUser() {
           mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
+                  width: 20,
+                  height: 20,
                   'assets/images/icons8-google-48.png'
                 ),
-               SizedBox(width: 20),
-                Text('Sign in with Google',
-                style: TextStyle(fontSize: 18, color: Colors.white),),
+               const SizedBox(width: 20),
+                const Text('Sign in with Google',
+                style: const TextStyle(fontSize: 18, color: Colors.white),),
               ],
             ),
              ),

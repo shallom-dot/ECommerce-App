@@ -35,6 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  google_sign_in_android: ^6.1.23
   google_sign_in: ^6.2.1
   introduction_screen: ^3.1.14
   sms_otp_auto_verify: ^2.1.0

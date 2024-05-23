@@ -50,8 +50,8 @@ Future<void> signUpWithEmail({
       showSnackBar(context, e.message!);
 
     }
-  }
-  Future<void>  SignInWithGoogle(BuildContext context) async{
+  }  
+  Future<void>  signInWithGoogle(BuildContext context) async{
     try{
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       final GoogleSignInAuthentication? googleAuth =
@@ -66,9 +66,9 @@ Future<void> signUpWithEmail({
         UserCredential userCredential =
          await _auth.signInWithCredential(credential);
          
-      //    if (userCredential.user != null) {
-      //    if (userCredential.additionalUserInfo!.isNewUser) { }  
-      //    }
+        //  if (userCredential.user != null) {
+        //  if (userCredential.additionalUserInfo!.isNewUser) { }  
+        //  }
         }
     } on FirebaseAuthException catch (e) {
       showSnackBar(context, e.message!);
